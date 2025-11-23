@@ -95,11 +95,16 @@ const columns: ColumnsType<TrendingItem> = [
 
 // 表格部分
 export const TrendingTable = () => {
-    const { trendingData } = useWebSocket()
+    const { trendingData, reconnectMsg } = useWebSocket()
 
     return (
         <div className="trending-table">
             <Table
+                // loading={status !== "open"}
+                loading={{
+                    spinning: !trendingData.length,
+                    tip: reconnectMsg,
+                }}
                 dataSource={trendingData}
                 columns={columns}
                 pagination={false}
