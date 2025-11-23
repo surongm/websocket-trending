@@ -1,5 +1,5 @@
 import './App.css'
-import { Trending } from './pages/Trending'
+import { Trending } from './pages'
 
 function App() {
   return (

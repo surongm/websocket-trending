@@ -66,8 +66,9 @@ export const TXsColumn = ({ record }: { record: TrendingItem }) => {
             {/* 买 / 卖 */}
             <div style={{ fontSize: 12 }}>
                 <span className="txs-buy">
-                    {record.buyCount24h} /
+                    {record.buyCount24h}
                 </span>
+                <span className="text-secondary"> / </span>
                 <span className="text-downside">{record.sellCount24h}</span>
             </div>
         </div>
