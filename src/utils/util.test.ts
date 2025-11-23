@@ -1,4 +1,4 @@
-import { decompressData, formatNumber, formatPrice, compTimeDiff } from "./";
+import { formatNumber, formatPrice, compTimeDiff } from "./";
 
 describe("formatNumber", () => {
     test("格式化为 B", () => {

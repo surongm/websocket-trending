@@ -1,17 +1,101 @@
 ## 运行
+需要VPN
+线上地址 https://surongm.github.io/
+
+```tsx
+npm install
 npm run dev
+npm run build
+npm run test
+```
 
 
 ## 功能
+1、webSocket 获取数据，心跳机制和出错指数退避重连
+2、点击表头可对该列进行排序
+3、Token列点击查询图标跳转到查询页面，点击复制图标可复制该列的合约地址
 
+
+## 实现
+React + TypeScript + WebSocket + Jest + Antd
+使用Ts约束类型
+使用react封装了自定义hooks useWebSocket
+使用Antd快速生成表格页面
+使用Scss方便写css代码
+使用Jest库写了utils的测试用例
+使用错误边界页面处理页面报错情况
 
 
 ## 目录
+src/
+├── assets/                      # 静态资源（图片、图标等）
+│   ├── default-token.png        # 有些数据没有图标，找了一个默认的图标
+│   └── react.svg
+│
+├── hooks/
+│   └── useWebSocket.tsx         # 自定义 WebSocket Hook，处理连接/重连/消息流等
+│
+├── pages/
+│   ├── Error/                   # 错误边界 & 错误页面
+│   │   ├── ErrorBoundary.tsx    # React 错误边界（Class 组件）
+│   │   ├── ErrorFallback.tsx    # ErrorBoundary 捕获错误时展示的 UI
+│   │   └── NotFound.tsx         # 404 页面
+│   │
+│   └── Trending/                # Trending 页面模块
+│       ├── ColumnItem.tsx       # 单元格渲染逻辑
+│       ├── index.scss           # 页面样式
+│       ├── index.tsx            # Trending 主页面
+│       ├── TrendingTable.tsx    # 表格组件（接收 WebSocket 数据）
+│       └── type.ts              # Trending 数据类型定义
+│
+├── utils/
+│   ├── index.ts                 # 工具函数
+│   └── util.test.ts             # 工具函数测试（Jest）
+│
+├── App.tsx                      # 应用根组件
+├── App.css                      # 全局css变量
+├── index.css
+├── main.tsx                     # 项目入口
+│
+├── vite.config.ts               # Vite 配置
+└── tsconfig.json                # TypeScript 配置
 
 
+## 材料
+WebSocket地址 Source：wss://web-t.pinkpunk.io/ws 这是一个公开的ws推数据源，任何人都可以订阅
+参考GMGN （https://gmgn.ai/）和Binance Web3 （https://web3.binance.com/）
+
+订阅trending数据
+{
+    "topic": "trending",
+    "event": "sub",
+    "interval": "",
+    "pair": "",
+    "chainId": "56",
+    "compression": 0
+}
+检查心跳
+{
+    "topic": "pong",
+    "event": "sub",
+    "pong": "1762871018290",
+    "interval": "",
+    "pair": "",
+    "chainId": "",
+    "compression": 1
+}
+
+rgba(255, 255, 255, 1) Primary text color
+rgba(255, 255, 255, 0.4) Secondary text color
+rgba(238, 171, 189, 1) Primary pink color
+rgba(244, 188, 204, 1) Row hovered color
+rgba(70, 193, 127, 1) Upside color
+rgba(229, 56, 56, 1)  Downside color
+rgba(0, 0, 0, 1) Background color
+rgba(60, 43, 47, 1) Border color
 
 
-## 字段意思
+## 字段
 接口返回的字段意思
 baseDecimals	Token 精度（小数位数）
 volumeUsd24h	过去 24 小时成交额（美元）
