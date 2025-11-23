@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { Trending } from './pages/Trending'
 

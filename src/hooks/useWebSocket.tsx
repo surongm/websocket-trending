@@ -29,7 +29,9 @@ export const useWebSocket = (url = defaultUrl) => {
         ws.onmessage = (event) => {
             let res = JSON.parse(event.data)
             console.log("收到消息:", res);
-            setTrendingData(res.data)
+            if (res.topic === 'trending') {
+                setTrendingData(res.data)
+            }
         };
 
         // 出错

@@ -1,10 +1,10 @@
-import { useWebSocket } from '@/hooks/useWebSocket'
-import React from 'react'
+import { TrendingTable } from './TrendingTable'
 
 export const Trending = () => {
-    const { trendingData } = useWebSocket()
 
     return (
-        <div>Trending</div>
+        <div>
+            <TrendingTable />
+        </div>
     )
 }
