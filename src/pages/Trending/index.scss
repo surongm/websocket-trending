@@ -1,0 +1,163 @@
+// 表格
+.trending-table {
+    padding: 2rem;
+    background-color: var(--color-bg);
+
+    .ant-table {
+        background-color: var(--color-bg);
+    }
+
+    // 表头
+    .ant-table-thead>tr>th {
+        background-color: var(--color-bg);
+        color: var(--color-pink-primary);
+        border-bottom: 1px solid var(--color-row-border);
+    }
+
+    .ant-table-wrapper .ant-table-thead .ant-table-column-sorters {
+        display: inline-flex !important;
+        gap: 4px;
+    }
+
+    // 排序
+    .ant-table-wrapper .ant-table-column-sorter {
+        color: var(--color-pink-primary);
+    }
+
+    .ant-table-wrapper .ant-table-thead th.ant-table-column-sort {
+        background: var(--color-thead-sort) !important;
+    }
+
+    .ant-table-column-sorters .anticon {
+        font-size: 10px !important;
+    }
+
+    // 内容
+    .ant-table-tbody>tr>td {
+        background-color: var(--color-bg);
+        color: var(--color-text-primary);
+        border-bottom: 1px solid var(--color-row-border);
+    }
+
+    .ant-table-wrapper .ant-table-cell,
+    .ant-table-wrapper .ant-table-thead>tr>th,
+    .ant-table-wrapper .ant-table-tbody>tr>th,
+    .ant-table-wrapper .ant-table-tbody>tr>td,
+    .ant-table-wrapper tfoot>tr>th,
+    .ant-table-wrapper tfoot>tr>td {
+        padding: 0.5rem;
+    }
+
+    // 高亮
+    .ant-table-thead th:hover,
+    .ant-table-tbody>tr:hover>td {
+        background: var(--color-row-hover) !important;
+    }
+
+    // 文本
+    .ant-typography {
+        color: var(--color-text-primary);
+    }
+
+    .ant-table-wrapper .ant-table-thead>tr>th::before {
+        display: none !important;
+    }
+
+    // 表格分割线
+    .ant-table-wrapper .ant-table-tbody>tr>td:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+        position: absolute;
+        top: 50%;
+        inset-inline-end: 0;
+        width: 1px;
+        height: 1.6em;
+        background-color: var(--color-row-border);
+        transform: translateY(-50%);
+        transition: background-color var(--ant-motion-duration-mid);
+        content: "";
+    }
+
+    // loading
+    .ant-spin-spinning {
+        height: 100vh !important;
+    }
+
+    .ant-spin-dot-item {
+        background-color: var(--color-pink-primary);
+    }
+
+    .ant-spin-text {
+        color: var(--color-pink-primary);
+    }
+
+    // 暂无数据
+    .ant-empty-description {
+        color: var(--color-pink-primary) !important;
+    }
+
+    .ant-empty-image svg path {
+        fill: var(--color-pink-primary) !important;
+        // opacity: 0.3;
+    }
+
+    // 单元格
+    // token列
+    .table-column-token {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .token-name {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .token-address {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 2;
+            font-size: 12;
+        }
+
+        .token-name-icon,
+        .token-address-icon {
+            font-size: 12;
+            cursor: pointer;
+        }
+
+        .token-address-icon {
+            color: var(--color-text-secondary)
+        }
+    }
+
+    // TXs列
+    .table-column-txs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.2;
+
+        .txs-buy {
+            color: var(--color-upside);
+            margin-right: 4
+        }
+    }
+
+    // 一些文本
+    .text-secondary {
+        font-size: 12;
+        color: var(--color-text-secondary)
+    }
+
+    .text-upside {
+        color: var(--color-upside)
+    }
+
+    .text-downside {
+        color: var(--color-downside)
+    }
+
+
+}

@@ -1,4 +1,5 @@
 import { TrendingTable } from './TrendingTable'
+import './index.scss'
 
 export const Trending = () => {
 
